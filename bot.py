@@ -58,7 +58,9 @@ async def on_group_message(event):
         lines.append(f'    last: <code>{escape(sender.last_name)}</code>')
     if sender.username is not None:
         lines.append(f'    username: @{sender.username}')
+    lines.append(f'    bot: <code>{sender.bot}</code>')
     lines.append(f'    scam: <code>{sender.scam}</code>')
+    lines.append(f'    fake: <code>{sender.fake}</code>')
     lines.append(f'    <a href="tg://user?id={sender.id}">link</a>')
 
     await event.reply('\n'.join(lines), parse_mode='html')
