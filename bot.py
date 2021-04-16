@@ -50,7 +50,7 @@ def get_user_info(user):
     return lines
 
 
-@client.on(NewMessage(func=lambda e: e.is_private))
+@client.on(NewMessage(func=lambda e: e.is_private, incoming=True))
 async def private_message(event):
     await event.reply('Hi, I help with reporting spam in @SpamBlockers.')
 
