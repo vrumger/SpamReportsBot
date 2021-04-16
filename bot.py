@@ -59,7 +59,7 @@ async def private_message(event):
     NewMessage(
         func=lambda e: e.is_group and e.is_channel,
         pattern=(
-            r'^/report (?:https?://)?(?:t\.me|'
+            r'^/r (?:https?://)?(?:t\.me|'
             r'telegram\.(?:dog|me))/(\w+)/(\d+)$'
         ),
     ),
