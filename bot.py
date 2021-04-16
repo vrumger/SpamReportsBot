@@ -69,6 +69,10 @@ async def on_report(event):
     id = int(event.pattern_match.group(2))
 
     message = await user.get_messages(chat, ids=id)
+    if message is None:
+        await event.reply('Message not found')
+        return
+
     forward = await message.forward_to(event.chat_id)
 
     sender = await message.get_sender()
